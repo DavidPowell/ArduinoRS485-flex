@@ -3,24 +3,20 @@
 
   This sketch relays data sent and received between the Serial port and the RS-485 interface
 
-  Circuit:
-   - MKR board
-   - MKR 485 Shield
-     - ISO GND connected to GND of the RS-485 device
-     - Y connected to A of the RS-485 device
-     - Z connected to B of the RS-485 device
-     - A connected to Y of the RS-485 device
-     - B connected to Z of the RS-485 device
-     - Jumper positions
-       - FULL set to ON
-       - Z \/\/ Y set to ON, if the RS-485 device doesn't provide termination
-       - B \/\/ A set to ON, if the RS-485 device doesn't provide termination
-
-  created 4 July 2018
+  Based on original created 4 July 2018
   by Sandeep Mistry
 */
 
-#include <ArduinoRS485.h>
+#include <ArduinoRS485-flex.h>
+
+// Configure serial port and pins used
+#define RS485Serial Serial1  // The hardware serial port connected to the RS485 transceiver
+#define RS485_TX  D0         // should match the TX pin of chosen hardware serial port - used when sending breaks
+#define RS485_DE  D2         // GPIO pin connected to DE pin of transceiver
+#define RS485_RE  D3         // GPIO pin connected to RE pin of transceiver
+// Note - RS485_RE and RS485_DE should be different GPIO pins
+
+RS485Class RS485(Serial1, RS485_TX, RS485_DE, RS485_RE);
 
 void setup() {
   Serial.begin(9600);

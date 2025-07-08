@@ -17,9 +17,9 @@
   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#ifndef _ARDUINO_RS485_H_INCLUDED
-#define _ARDUINO_RS485_H_INCLUDED
+#ifndef _ARDUINO_RS485_FLEX_H_INCLUDED
+#define _ARDUINO_RS485_FLEX_H_INCLUDED
 
-#include "RS485.h"
+#include "RS485-flex.h"
 
 #endif

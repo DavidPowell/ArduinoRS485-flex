@@ -17,46 +17,46 @@
   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#ifndef _RS485_H_INCLUDED
-#define _RS485_H_INCLUDED
+#ifndef _RS485_FLEX_H_INCLUDED
+#define _RS485_FLEX_H_INCLUDED
 
 #include <Arduino.h>
 
-#ifndef RS485_DEFAULT_TX_PIN
-#ifdef PIN_SERIAL1_TX
-#define RS485_DEFAULT_TX_PIN PIN_SERIAL1_TX
-#else
-#define RS485_DEFAULT_TX_PIN 1 
-#endif
-#endif
+// #ifndef RS485_DEFAULT_TX_PIN
+// #ifdef PIN_SERIAL1_TX
+// #define RS485_DEFAULT_TX_PIN PIN_SERIAL1_TX
+// #else
+// #define RS485_DEFAULT_TX_PIN 1 
+// #endif
+// #endif
 
-#ifdef __AVR__
-#define RS485_DEFAULT_DE_PIN 2
-#define RS485_DEFAULT_RE_PIN -1
-#elif ARDUINO_NANO_RP2040_CONNECT
-#define RS485_DEFAULT_DE_PIN A1
-#define RS485_DEFAULT_RE_PIN A0
-#elif ARDUINO_SAMD_ZERO
-#define RS485_DEFAULT_DE_PIN A4
-#define RS485_DEFAULT_RE_PIN A5
-#elif defined(ARDUINO_UNOR4_WIFI) || defined(ARDUINO_UNOR4_MINIMA)
-#define SERIAL_PORT_HARDWARE Serial1
-#define RS485_DEFAULT_DE_PIN 8
-#define RS485_DEFAULT_RE_PIN 7
-#else
-#ifndef RS485_DEFAULT_DE_PIN
-#define RS485_DEFAULT_DE_PIN A6
-#define RS485_DEFAULT_RE_PIN A5
-#endif
-#endif
+// #ifdef __AVR__
+// #define RS485_DEFAULT_DE_PIN 2
+// #define RS485_DEFAULT_RE_PIN -1
+// #elif defined(ARDUINO_NANO_RP2040_CONNECT) || defined(ARDUINO_RASPBERRY_PI_PICO)
+// #define RS485_DEFAULT_DE_PIN A1
+// #define RS485_DEFAULT_RE_PIN A0
+// #elif ARDUINO_SAMD_ZERO
+// #define RS485_DEFAULT_DE_PIN A4
+// #define RS485_DEFAULT_RE_PIN A5
+// #elif defined(ARDUINO_UNOR4_WIFI) || defined(ARDUINO_UNOR4_MINIMA)
+// #define SERIAL_PORT_HARDWARE Serial1
+// #define RS485_DEFAULT_DE_PIN 8
+// #define RS485_DEFAULT_RE_PIN 7
+// #else
+// #ifndef RS485_DEFAULT_DE_PIN
+// #define RS485_DEFAULT_DE_PIN A6
+// #define RS485_DEFAULT_RE_PIN A5
+// #endif
+// #endif
 
-#ifdef CUSTOM_RS485_DEFAULT_DE_PIN
-# define RS485_DEFAULT_DE_PIN CUSTOM_RS485_DEFAULT_DE_PIN
-#endif
+// #ifdef CUSTOM_RS485_DEFAULT_DE_PIN
+// # define RS485_DEFAULT_DE_PIN CUSTOM_RS485_DEFAULT_DE_PIN
+// #endif
 
-#ifdef CUSTOM_RS485_DEFAULT_RE_PIN
-# define RS485_DEFAULT_RE_PIN CUSTOM_RS485_DEFAULT_RE_PIN
-#endif
+// #ifdef CUSTOM_RS485_DEFAULT_RE_PIN
+// # define RS485_DEFAULT_RE_PIN CUSTOM_RS485_DEFAULT_RE_PIN
+// #endif
 
 #define RS485_DEFAULT_PRE_DELAY 50
 #define RS485_DEFAULT_POST_DELAY 50
@@ -106,6 +106,6 @@ class RS485Class : public Stream {
     uint16_t _config;
 };
 
-extern RS485Class RS485;
+//extern RS485Class RS485;
 
 #endif
